@@ -1,17 +1,17 @@
 import React from 'react'
-import Table from 'react-bootstrap/Table'
+
 import './project1.css';
 import './manager.css';
-import Dropdown from 'react-bootstrap/Dropdown'
-import Button from 'react-bootstrap/Button';
+
+
 export default function Managertoemp() {
     return (
         <div>
             <div className='HeadBox'>
                     <a className="navbar-brand" href="#"><img src="https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,f_auto,q_auto:eco,dpr_1/v1435755683/ur698lax3hckifehtdpj.png" className="Navlogo" alt="INCEDO" srcset="" /></a>
                     
-                    <Button className="username" href="/timesheet"variant="outline-secondary">BACK TO MANAGER</Button>{' '}
-                    <Button className="logout" href="/" variant="outline-secondary">LOGOUT</Button>{' '}
+                    <button className="username" href="/timesheet"variant="outline-secondary">BACK TO MANAGER</button>{' '}
+                    <button className="logout" href="/" variant="outline-secondary">LOGOUT</button>{' '}
                     
                    
                     {/* <div className='logoutbox'>Log out</div> */}
@@ -27,7 +27,7 @@ export default function Managertoemp() {
 
                 
             </div>
-            <Table responsive>
+            <table responsive>
                 <thead>
                     <tr>
                         <th>#</th>
@@ -62,7 +62,7 @@ export default function Managertoemp() {
                         ))}
                     </tr>
                 </tbody>
-            </Table>
+            </table>
 
 
            

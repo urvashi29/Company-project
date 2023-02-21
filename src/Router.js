@@ -5,14 +5,12 @@ import Timesheet from "./modules/Manager/container/Timesheet";
 import ProjectOne from "./modules/Manager/container/ProjectOne";
 import ProjectTwo from "./modules/Manager/container/ProjectTwo";
 import Managertoemp from "./modules/Manager/container/Managertoemp";
-import Navbar from './modules/Navbar/Navbar';
-import Employee from "./modules/Employee/container/Employee";
 
+import Employee from "./modules/Employee/container/Employee";
 
 function Router() {
   return (
     <BrowserRouter>
-   
       <Routes>
         <Route exact path="/" element={<Login />} />
 
