@@ -15,7 +15,7 @@ import  MenuIcon  from "@mui/icons-material/Menu";
 
 import logo from "../../assets/logo.png";
 
-const pages = ["Username", "Logout"];
+const pages = ["Manoj Kumar", "Logout"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -29,7 +29,7 @@ function Navbar() {
   };
 
   return (
-    <AppBar position="static" style={{ backgroundColor: "blue" }}>
+    <AppBar position="static" style={{ backgroundColor: "#043465" }}>
       <Container maxWidth="xl">
         <Toolbar disableGutters>
           <Typography

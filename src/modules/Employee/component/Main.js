@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./Main.css";
 import { experimentalStyled as styled } from "@mui/material/styles";
 import Grid from "@mui/material/Grid";
@@ -8,15 +8,19 @@ import timesheetData from "../../../assets/data/showtimesheettoemployee.json";
 import approvedData from "../../../assets/data/showtimesheettoemployeebasedonaprroval.json";
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: "pink",
+  backgroundColor: "#043465",
   ...theme.typography.body2,
   padding: theme.spacing(2),
-  color: "black",
+  color: "white",
 }));
 
 const Main = () => {
-  const [count, setCount] = useState(0);
+  const [count, setCount] = useState({ approved: 0, rejected: 0, pending: 0 });
   const [data, setData] = useState(timesheetData);
+
+  useEffect(() => {
+    setCount({ ...count, approved: approvedData.length });
+  }, []);
 
   const handleClick = (e) => {
     if (e.target.id == "approved") {
@@ -34,13 +38,13 @@ const Main = () => {
       >
         <Grid item xs={10}>
           <div className="status" onClick={handleClick} id="approved">
-            Approved {count}
+            Approved {count.approved}
           </div>
-          <div className="status">Rejected {count}</div>
-          <div className="status">Pending {count}</div>
+          <div className="status">Rejected {count.rejected}</div>
+          <div className="status">Pending {count.pending}</div>
         </Grid>
         <Grid item xs={2}>
-          <div className="week-status">Dropdown {count}</div>
+          <div className="week-status">Dropdown {count.pending}</div>
         </Grid>
       </Grid>
 
