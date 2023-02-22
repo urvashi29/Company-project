@@ -6,12 +6,14 @@ import Box from "@mui/material/Box";
 import Paper from "@mui/material/Paper";
 import timesheetData from "../../../assets/data/showtimesheettoemployee.json";
 import approvedData from "../../../assets/data/showtimesheettoemployeebasedonaprroval.json";
+import logo from "../../../assets/Capture.png";
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: "#043465",
   ...theme.typography.body2,
   padding: theme.spacing(2),
   color: "white",
+  height: "180px",
 }));
 
 const Main = () => {
@@ -29,7 +31,15 @@ const Main = () => {
   };
 
   return (
-    <>
+    <div
+      style={{
+        backgroundImage: `url(${logo})`,
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "top center",
+        backgroundSize: "400px",
+        backgroundPositionY: "60px",
+      }}
+    >
       <Grid
         container
         spacing={{ xs: 2, md: 3 }}
@@ -48,7 +58,7 @@ const Main = () => {
         </Grid>
       </Grid>
 
-      <Box sx={{ flexGrow: 1 }} style={{ margin: "200px 20px 0px 20px" }}>
+      <Box sx={{ flexGrow: 1 }} style={{ margin: "180px 20px 0px 20px" }}>
         <Grid
           container
           spacing={{ xs: 3, md: 3 }}
@@ -61,13 +71,14 @@ const Main = () => {
                 <p>Project Name: {item.project.projectName}</p>
                 <p>Project Id:{item.project.project_id}</p>
                 <p>Manager Name: {item.project.employee.employee_name}</p>
+                <p>Remarks:</p>
                 <p>Status:</p>
               </Item>
             </Grid>
           ))}
         </Grid>
       </Box>
-    </>
+    </div>
   );
 };
 
@@ -78,7 +89,7 @@ export default Main;
 //     <Item>
 //       <h2>{item.timesheetId}</h2>
 //       <p>Project Name: {item.project.projectName}</p>
-//       <p>Project Id:{item.II - PROJ - 00010}</p>
+//       <p>Proj,ect Id:{item.II - PROJ - 00010}</p>
 //       <p>Manager Name: {item.employee_name}</p>
 //       <p>Status: {}</p>
 //     </Item>
